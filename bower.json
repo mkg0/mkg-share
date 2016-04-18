@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "main": [
-    "dist/mkg-share.min.css",
-    "dist/mkg-share.min.js"
+    "dist/mkg-share.css",
+    "dist/mkg-share.js"
   ],
   "authors": [
     "mkg <mehmetkamilgulen@gmail.com>"
