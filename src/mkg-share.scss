@@ -1,0 +1,52 @@
+$networks: (
+  email:#32373f,
+  facebook:#3B5998,
+  googleplus:#E34429,
+  linkedin:#027bb6 ,
+  pinterest:#C5282F,
+  reddit:#a1caf2,
+  twitter:#27aae1,
+  whatsapp:#25D366,
+  sms:#63908D
+);
+
+$background-sizes: (
+  email: 'center/20px 20px',
+  facebook: 'center/20px 20px',
+  googleplus: 'center/24px 20px',
+  linkedin: 'center 8px/20px 20px',
+  pinterest: 'center/20px 20px',
+  reddit: 'center/25px 25px',
+  twitter: 'center/20px 20px',
+  whatsapp: 'center 7px/25px 25px',
+  sms: 'center 13px/17px 17px'
+);
+
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mshare{@extend %clearfix;font-size: 0;text-align: center;white-space: nowrap;;
+  &--container{position: relative;cursor: pointer;user-select:none}/*!owner element*/
+
+
+  &--expanded{margin:1em;
+    .mshare-item{margin:5px;padding: 0 15px}
+  }
+  &--pane{
+    position: absolute;top:-45px;left:0;z-index: 1;
+  }
+//cubic-bezier(0.515, 0.570, 0.110, 0.980)
+  &--open{height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
+  &--close{height:0px;transform:translate3d(0,20px,0);opacity:0;overflow: hidden;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
+
+
+  &-item{height: 40px;padding: 0 12px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;text-indent:5px;font-size: 1rem;}
+  @each $network, $color in $networks {
+    &--#{$network}{background-color: $color;
+      &:before{content:'';width:25px;height:40px;background:url('img/#{$network}.svg') #{map-get($background-sizes, $network)} no-repeat;display: block;float:left;line-height: 40px;vertical-align: middle;}
+      &:hover{}
+    }
+  }
+}

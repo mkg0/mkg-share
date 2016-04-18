@@ -1,0 +1,20 @@
+{
+  "name": "mkg-share",
+  "version": "0.0.1",
+  "description": "",
+  "main": [
+    "dist/mkg-share.min.css",
+    "dist/mkg-share.min.js"
+  ],
+  "authors": [
+    "mkg <mehmetkamilgulen@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
