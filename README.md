@@ -5,10 +5,14 @@ easy way to add social share buttons to website including whatsapp, sms, e-mail.
 Get the latest release of mkg-share from repo or install with bower cli => `bower install mkg-share`
 
 import the stylesheet to head of the page
-`<link rel="stylesheet" href="mkg-share.min.css" />`
+```html
+<link rel="stylesheet" href="mkg-share.min.css" />
+```
 
 Import the script file
-`<script src="mkg-share.min.js"></script>`
+```html
+<script src="mkg-share.min.js"></script>
+```
 
 ## Usage
 
