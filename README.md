@@ -36,6 +36,11 @@ assign seperated share data with html attributes:
 new mShare('#demo4',{style:'pane'});
 ```
 
-# License
+## To do
+
+- add native api share buttons
+- add vertical alignment property
+
+## License
 
 The code and the documentation are released under the MIT License.
