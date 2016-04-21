@@ -11,42 +11,43 @@ $networks: (
 );
 
 $background-sizes: (
-  email: 'center/20px 20px',
-  facebook: 'center/20px 20px',
-  googleplus: 'center/24px 20px',
-  linkedin: 'center 8px/20px 20px',
-  pinterest: 'center/20px 20px',
-  reddit: 'center/25px 25px',
-  twitter: 'center/20px 20px',
-  whatsapp: 'center 7px/25px 25px',
-  sms: 'center 13px/17px 17px'
+  email: 'center/75%',
+  facebook: 'center/80%',
+  googleplus: 'center/100%',
+  linkedin: 'center 44%/80%',
+  pinterest: 'center/80%',
+  reddit: 'center/100%',
+  twitter: 'center/80%',
+  whatsapp: 'center 50%/100%',
+  sms: 'center 50%/90%'
 );
-
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.mshare{@extend %clearfix;font-size: 0;text-align: center;white-space: nowrap;;
-  &--container{position: relative;cursor: pointer;user-select:none}/*!owner element*/
+.mshare{font-size: 0;text-align: center;white-space: nowrap;overflow: hidden;
 
 
-  &--expanded{margin:1em;
-    .mshare-item{margin:5px;padding: 0 15px}
-  }
   &--pane{
     position: absolute;top:-45px;left:0;z-index: 1;
   }
-//cubic-bezier(0.515, 0.570, 0.110, 0.980)
-  &--open{height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
-  &--close{height:0px;transform:translate3d(0,20px,0);opacity:0;overflow: hidden;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
-
-
-  &-item{height: 40px;padding: 0 12px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;text-indent:5px;font-size: 1rem;}
+  &-item{height: 40px;padding: 0 12px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;text-indent:5px;font-size: 1rem;user-select:none;touch-action:manipulation;
+    &:before{content:'';width:25px;height:100%;display: block;float:left;line-height: 40px;vertical-align: middle;}
+  }
   @each $network, $color in $networks {
     &--#{$network}{background-color: $color;
-      &:before{content:'';width:25px;height:40px;background:url('img/#{$network}.svg') #{map-get($background-sizes, $network)} no-repeat;display: block;float:left;line-height: 40px;vertical-align: middle;}
+      &:before{background:url('img/#{$network}.svg') #{map-get($background-sizes, $network)} no-repeat;}
       &:hover{}
     }
+  }
+  &--open{height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
+  &--close{height:0px;transform:translate3d(0,20px,0);opacity:0;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
+  &--container{position: relative;}/*!owner element*/
+  &--button{cursor: pointer;user-select:none;touch-action:manipulation;}
+  &--expanded{margin:1em;
+    .mshare-item{margin:0 5px;padding: 0 15px;}
+  }
+  &--small{height:30px;
+    .mshare-item{height:30px;line-height: 30px;font-size:0.8rem;padding: 0 8px;
+      &:before{width:22px;}
+    }
+    .mshare-item{}
+    &.mshare--expanded .mshare-item{padding:0 14px;}
   }
 }

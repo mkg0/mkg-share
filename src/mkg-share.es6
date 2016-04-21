@@ -3,7 +3,8 @@ class mShare{
         this.selector = selector;
         this.options = {
             style:'expanded',//expandedn, pane
-            text:null,//default auto, u can set true, false
+            text:null,//null:auto, true, false
+            size:null,//null:normal, small
             url: window.location.href,
             title: this._defaultTitle(),
             image: this._defaultImage(),
@@ -174,15 +175,18 @@ class mShare{
                 template+=`<a href="${network.url + datas}" class="mshare-item${network.openPopUp ?' mshare--popup':''} mshare--${network.className}">${isTextDisplay ? network.text : ''}</a>`;
             }
         }
-            //
         template +='</div>';
         element.innerHTML +=template;
         element.className += ' mshare--container';
+        let mshare = element.querySelector('.mshare');
+        if (this.options.size)
+            mshare.className += ' mshare--' + this.options.size;
         if(this.options.style==='pane'){
+            element.className += ' mshare--button';
             element.addEventListener('click',this.toggle.bind(this,element));
-            let mshare = element.querySelector('.mshare');
             mshare.className += ' mshare--close';
-            mshare.style.left= `${mshare.offsetWidth/-2 + element.offsetWidth/2}px`;
+            console.log(mshare.offsetWidth);
+            mshare.style.left= `${-mshare.offsetWidth/2 + element.offsetWidth/2 }px`;
             if (mshare.getBoundingClientRect().left < 0) {
                 mshare.style.left= mshare.offsetWidth/-2 + element.offsetWidth/2 - mshare.getBoundingClientRect().left + 'px';
             }
