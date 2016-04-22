@@ -105,7 +105,8 @@
       margin: 0 5px;
       padding: 0 15px; }
   .mshare--small {
-    height: 30px; }
+    height: 30px;
+    top: -35px; }
     .mshare--small .mshare-item {
       height: 30px;
       line-height: 30px;

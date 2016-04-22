@@ -43,7 +43,7 @@ $background-sizes: (
   &--expanded{margin:1em;
     .mshare-item{margin:0 5px;padding: 0 15px;}
   }
-  &--small{height:30px;
+  &--small{height:30px;top:-35px;
     .mshare-item{height:30px;line-height: 30px;font-size:0.8rem;padding: 0 8px;
       &:before{width:22px;}
     }
