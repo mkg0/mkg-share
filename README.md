@@ -6,15 +6,21 @@ It's easy to use and vanilla js. keep clean your source code! now if u prefer na
 ## Install
 Get the latest release of mkg-share from repo or install with bower cli => `bower install mkg-share`
 
-import the stylesheet to head of the page
+import the stylesheet and script files
 ```html
 <link rel="stylesheet" href="mkg-share.min.css" />
-```
-
-Import the script file
-```html
 <script src="mkg-share.min.js"></script>
 ```
+## Views
+
+#### default view
+![default view](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/1.jpg)
+#### small sized
+![default view](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/2.jpg)
+#### pane mode
+![default view](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/3.gif)
+#### native buttons are also optional
+![default view](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/4.jpg)
 
 ## Usage
 
