@@ -1,6 +1,6 @@
 {
   "name": "mkg-share",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "",
   "main": [
     "dist/mkg-share.min.css",
