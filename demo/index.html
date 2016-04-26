@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sayfa Başlığı</title>
+        <meta name="description" content="sayfa detay">
+        <script src="../dist/mkg-share.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="../dist/mkg-share.css" media="screen" title="no title" charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <style media="screen">
+            html{font:14px 'Open Sans';}
+            body{background-color:#e2e4e2;font-size:1em;}
+            #content{background:#f4f5fa;margin: 20px 40px 20px 40px;min-height: calc(100vh - 40px);padding:40px;box-sizing: border-box;text-align: center}
+            .demo{margin:30px;}
+            .demoarea{padding:30px 20px;background: rgba(0,0,0,0.05);}
+            h2{text-align: center;margin:15px 0 5px 0;font-weight: 400;font-size: 1.2em}
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <p>Default</p>
+            <div class="demoarea">
+                <div class="demo" id="demo1"></div>
+                <pre><code>new mShare('#demo1');</code></pre>
+            </div>
+            <p>small sized</p>
+            <div class="demoarea">
+                <div class="demo" id="demo2"></div>
+                <pre><code>new mShare('#demo2',{size:'small'});</code></pre>
+            </div>
+            <p>native styled</p>
+            <div class="demoarea">
+                <div class="demo" id="demo3" data-mshare-url="http://mkglab.com" data-mshare-title="mkg Title" data-mshare-image="http://lorempixel.com/100/100" data-mshare-description="mkg Desc"></div>
+                <pre><code>new mShare('#demo3',{mode:'expanded',style:'native', reddit:false,facebookAppId:677755208947007});</code></pre>
+            </div>
+            <p>pane mode (assigned target)</p>
+            <div class="demoarea">
+                <div class="demo" id="demo5" style="display:inline-block;background-color:#63908D;padding:5px;color:#fff">SHARE</div>
+                <pre><code>new mShare('#demo5',{mode:'pane',googleplus:false,reddit:false,pinterest:false});</code></pre>
+            </div>
+            <p>small sized pane with custom data from html attributes: <br><strong>data-mshare-title</strong>, <br><strong>data-mshare-description</strong>, <br><strong>data-mshare-image</strong>, <br><strong>data-mshare-url</strong></p>
+            <div class="demoarea">
+                <div data-mshare-url="http://google.com" data-mshare-title="Custom Title" data-mshare-description="Custom Content Description" data-mshare-image="http://lorempixel.com/400/200" class="demo" id="demo6" style="display:inline-block;background-color:#63908D;padding:5px;color:#fff">SHARE</div>
+                <pre><code>new mShare('#demo6',{mode:'pane',size:'small'});</code></pre>
+            </div>
+        <script>
+        new mShare('#demo1',{});
+        new mShare('#demo2',{size:'small'});
+        new mShare('#demo3',{mode:'expanded',style:'native', reddit:false,facebookAppId:677755208947007});
+        new mShare('#demo5',{mode:'pane',googleplus:false,reddit:false,pinterest:false});
+        new mShare('#demo6',{mode:'pane',size:'small'});
+
+        </script>
+        </div>
+    </body>
+</html>

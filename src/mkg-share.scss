@@ -10,35 +10,64 @@ $networks: (
   sms:#63908D
 );
 
-$background-sizes: (
-  email: 'center/75%',
-  facebook: 'center/80%',
-  googleplus: 'center/100%',
-  linkedin: 'center 44%/80%',
-  pinterest: 'center/80%',
-  reddit: 'center/100%',
-  twitter: 'center/80%',
-  whatsapp: 'center 50%/100%',
-  sms: 'center 50%/90%'
-);
 .mshare{font-size: 0;text-align: center;white-space: nowrap;overflow: hidden;
 
 
   &--pane{
-    position: absolute;top:-45px;left:0;z-index: 1;
+    position: absolute;top:-45px;left:50%;z-index: 1;
   }
   &-item{height: 40px;padding: 0 12px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;text-indent:5px;font-size: 1rem;user-select:none;touch-action:manipulation;
     &:before{content:'';width:25px;height:100%;display: block;float:left;line-height: 40px;vertical-align: middle;}
-  }
-  @each $network, $color in $networks {
-    &--#{$network}{background-color: $color;
-      &:before{background:url('img/#{$network}.svg') #{map-get($background-sizes, $network)} no-repeat;}
-      &:hover{}
+    &--email{background-color: #{map-get($networks, 'email')};
+      &:before{background:url('img/email.svg') center / 75% no-repeat;}
+    }
+    &--facebook{background-color: #{map-get($networks, 'facebook')};
+      &:before{background:url('img/facebook.svg') center / 80% no-repeat;}
+    }
+    &--googleplus{background-color: #{map-get($networks, 'googleplus')};
+      &:before{background:url('img/googleplus.svg') center / 100% no-repeat;}
+    }
+    &--linkedin{background-color: #{map-get($networks, 'linkedin')};
+      &:before{background:url('img/linkedin.svg') center 44%/80% no-repeat;}
+    }
+    &--pinterest{background-color: #{map-get($networks, 'pinterest')};
+      &:before{background:url('img/pinterest.svg') center / 80% no-repeat;}
+    }
+    &--reddit{background-color: #{map-get($networks, 'reddit')};
+      &:before{background:url('img/reddit.svg') center / 100% no-repeat;}
+    }
+    &--twitter{background-color: #{map-get($networks, 'twitter')};
+      &:before{background:url('img/twitter.svg') center / 80% no-repeat;}
+    }
+    &--whatsapp{background-color: #{map-get($networks, 'whatsapp')};
+      &:before{background:url('img/whatsapp.svg') center 50%/100% no-repeat;}
+    }
+    &--sms{background-color: #{map-get($networks, 'sms')};
+      &:before{background:url('img/sms.svg') center 50%/90% no-repeat;}
     }
   }
-  &--open{height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
-  &--close{height:0px;transform:translate3d(0,20px,0);opacity:0;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
-  &--container{position: relative;}/*!owner element*/
+  &-native{display: inline-block;font-size:1rem;vertical-align: top;padding:4px 6px;min-width: 52px;
+    &--email{}
+    &--facebook{}
+    &--googleplus{}
+    &--linkedin{}
+    &--pinterest{}
+    &--reddit{}
+    &--twitter{}
+    &--whatsapp{}
+    &--sms{}
+}
+
+
+  &_container{position: relative;}/*!owner element*/
+  &_metacontainer{}
+
+  &--open:not(.mshare--native){height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
+  &--close:not(.mshare--native){height:0px;transform:translate3d(0,20px,0);opacity:0;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
+  &--open.mshare--native{height:40px;visibility:visible;transform:translate3d(-50%,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
+  &--close.mshare--native{height:0px;transform:translate3d(-50%,20px,0);opacity:0;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
+
+
   &--button{cursor: pointer;user-select:none;touch-action:manipulation;}
   &--expanded{margin:1em;
     .mshare-item{margin:0 5px;padding: 0 15px;}

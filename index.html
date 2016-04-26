@@ -21,17 +21,21 @@
             <div class="demo" id="demo1"></div>
             <h2>expanded share buttons, <strong>new mShare('#demo2');</strong></h2>
             <div class="demo" id="demo2"></div>
-            <h2>social share buttons with assigned pane<br><strong>new mShare('#demo3',{style:'pane',googleplus:false,reddit:false,pinterest:false});</strong></h2>
+            <h2>native share buttons(with apis), <strong>new mShare('#demo5',{style:'native'});</strong></h2>
+            <div class="demo" id="demo5" data-mshare-url="http://mkglab.com" data-mshare-title="mkg Title" data-mshare-image="http://lorempixel.com/100/100" data-mshare-description="mkg Desc"></div>
+            <h2>native share buttons(with apis), <strong>new mShare('#demo5',{mode:'pane',style:'native',facebookAppId:677755208947007});</strong></h2>
+            <div class="demo" id="demo6" style="display:inline-block;background-color:#63908D;padding:5px;color:#fff">Native Share</div>
+            <h2>social share buttons with assigned pane<br><strong>new mShare('#demo3',{mode:'pane',googleplus:false,reddit:false,pinterest:false});</strong></h2>
             <div class="demo" id="demo3" style="display:inline-block;background-color:#63908D;padding:5px;color:#fff">SHARE</div>
             <h2>assign seperated share data with html attributes: <br><strong>data-mshare-title</strong>, <br><strong>data-mshare-description</strong>, <br><strong>data-mshare-image</strong>, <br><strong>data-mshare-url</strong></h2>
             <div data-mshare-url="http://google.com" data-mshare-title="Custom Title" data-mshare-description="Custom Content Description" data-mshare-image="http://lorempixel.com/400/200" class="demo" id="demo4" style="display:inline-block;background-color:#63908D;padding:5px;color:#fff">SHARE</div>
-
-
         <script>
         new mShare('#demo1',{text:false});
         new mShare('#demo2',{size:'small'});
-        new mShare('#demo3',{style:'pane',googleplus:false,reddit:false,pinterest:false});
-        new mShare('#demo4',{style:'pane',size:'small'});
+        new mShare('#demo3',{mode:'pane',googleplus:false,reddit:false,pinterest:false});
+        new mShare('#demo4',{mode:'pane',size:'small'});
+        new mShare('#demo5',{mode:'expanded',style:'native'});
+        new mShare('#demo6',{mode:'pane',style:'native', size:'small'});
 
         </script>
         </div>
