@@ -4,6 +4,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/*jshint esversion:6*/
+
 var mShare = function () {
     function mShare(selector, options) {
         _classCallCheck(this, mShare);
@@ -13,12 +15,12 @@ var mShare = function () {
             mode: 'expanded', //expanded, pane
             style: 'basic', //basic,native
             text: null, //null:auto, true, false
+            setTexts: null,
             size: null, //null:normal, small
             url: window.location.href,
             title: this._defaultTitle(),
             image: this._defaultImage(),
             description: this._defaultDescription(),
-            language: 'en',
             facebook: true,
             facebookAppId: 677755208947007,
             googleplus: true,
@@ -61,7 +63,7 @@ var mShare = function () {
                 },
                 native: true,
                 nativeProps: {
-                    scriptSrc: 'https://apis.google.com/js/platform.js', //<script src="https://apis.google.com/js/platform.js" async defer></script>
+                    scriptSrc: 'https://apis.google.com/js/platform.js',
                     scriptContent: '',
                     addContent: '<div class="g-plus" data-action="share" data-annotation="bubble" data-height="20" data-href="$:url"></div>'
                 }
@@ -78,7 +80,7 @@ var mShare = function () {
                 },
                 native: true,
                 nativeProps: {
-                    scriptSrc: '//platform.linkedin.com/in.js', //<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: tr_TR</script>
+                    scriptSrc: '//platform.linkedin.com/in.js',
                     scriptContent: '',
                     addContent: '<script type="IN/Share" data-url="$:url" data-counter="right"></script>'
                 }
@@ -177,6 +179,14 @@ var mShare = function () {
 
         for (var item in options) {
             this.options[item] = options[item];
+        }
+        if (this.options.setTexts) {
+            var texts = this.options.setTexts;
+            for (var _item in texts) {
+                if (this._networks.hasOwnProperty(_item)) {
+                    this._networks[_item].text = texts[_item];
+                }
+            }
         }
         if (this.options.style === 'native') {
             this.options.size = 'small';
@@ -293,7 +303,10 @@ var mShare = function () {
                 if (this.options.style !== 'native') {
                     mshare.style.left = -mshare.offsetWidth / 2 + element.offsetWidth / 2 + 'px';
                     if (mshare.getBoundingClientRect().left < 0) {
-                        mshare.style.left = mshare.offsetWidth / -2 + element.offsetWidth / 2 - mshare.getBoundingClientRect().left + 'px';
+                        mshare.style.left = element.getBoundingClientRect().left * -1 + 'px';
+                    }
+                    if (mshare.getBoundingClientRect().left > document.documentElement.clientWidth - mshare.offsetWidth) {
+                        mshare.style.left = document.documentElement.clientWidth - element.getBoundingClientRect().left - mshare.offsetWidth + 'px';
                     }
                 }
             }
