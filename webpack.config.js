@@ -41,30 +41,52 @@ function createConfig(options) {
     }));
 
     return {
-    debug: !isProduction,
-    devtool: options.min? false: isProduction? "source-map" :'eval',
-    entry: {
-        'mkg-share': './src/mkg-share.js'
-    },
-    module:{
-        loaders:[
-            {test:/\.scss$/, loaders:['style','css','autoprefixer?browsers=last 2 version','sass']},
-            {test: /mkg-share\.js/,loaders:['babel']},
-            {test: /\.min\.js$/,loaders:['uglify']}
-        ]
-    },
-    devServer:{
-        contentBase:'demo/',
-        open:true
-    },
-    plugins:plugins,
-    output: {
-        libraryTarget: options.target,
-        library: "mShare",
-        path: path.join(__dirname, 'dist'),
-        publicPath: '/',
-        filename: `[name]${options.target=== 'commonjs2'? '.npm':''}${options.min? '.min':''}.js`
-    }};
+        debug: !isProduction,
+        devtool: options.min? false: isProduction? "source-map" :'eval',
+        entry: {
+            'mkg-share': './src/mkg-share.js'
+        },
+        module:{
+            loaders:[
+                {test:/\.scss$/, loaders:['style','css','autoprefixer?browsers=last 2 version','sass']},
+                {test: /mkg-share\.js/,loaders:['babel']},
+                {test: /\.svg$/,loaders:['html','image-webpack']},
+                {test: /\.min\.js$/,loaders:['uglify']}
+            ]
+        },
+        devServer:{
+            contentBase:'demo/',
+            open:true
+        },
+        plugins:plugins,
+        output: {
+            libraryTarget: options.target,
+            library: "mShare",
+            path: path.join(__dirname, 'dist'),
+            publicPath: '/',
+            filename: `[name]${options.target=== 'commonjs2'? '.npm':''}${options.min? '.min':''}.js`
+        },
+        imageWebpackLoader: {
+            svgo:{
+              plugins: [
+                {
+                  removeStyleElement : true
+                },
+                {
+                    removeAttrs:{
+                        attrs: ['id', 'class']
+                    }
+                },
+                {
+                    addClassesToSVGElement:{
+                        className:'mshare-item-icon'
+                    }
+                }
+
+              ]
+            }
+          }
+      };
 };
 module.exports = parallel.createVariants(variants, createConfig);
 // open('http://localhost:8080/');

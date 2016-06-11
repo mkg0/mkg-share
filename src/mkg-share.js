@@ -1,5 +1,27 @@
 import './mkg-share.scss';
 
+
+import email from './img/email.svg';
+import facebook from './img/facebook.svg';
+import googleplus from './img/googleplus.svg';
+import linkedin from './img/linkedin.svg';
+import pinterest from './img/pinterest.svg';
+import reddit from './img/reddit.svg';
+import sms from './img/sms.svg';
+import twitter from './img/twitter.svg';
+import whatsapp from './img/whatsapp.svg';
+var svg = {
+    email,
+    facebook,
+    googleplus,
+    linkedin,
+    pinterest,
+    reddit,
+    sms,
+    twitter,
+    whatsapp
+};
+
 export default class mShare{
     constructor(selector, options){
         this.selector = selector;
@@ -263,7 +285,8 @@ export default class mShare{
 
                         datas += data + '=' + dataValue;
                     }
-                    template+=`<a href="${network.url + datas}" class="mshare-item${network.openPopUp ?' mshare-item--popup':''} mshare-item--${network.className}">${isTextDisplay ? network.text : ''}</a>`;
+                    template+=`<a href="${network.url + datas}" class="mshare-item${network.openPopUp ?' mshare-item--popup':''} mshare-item--${network.className}">${svg[network.className]}${isTextDisplay ? '<span class="mshare-item-text">'+network.text+'</span>' : ''}</a>`;
+                    console.log(template);
                 }else if(network.native){
                     this._addScript(network.className, network.nativeProps);
                     let addContent = network.nativeProps.addContent;
@@ -276,8 +299,6 @@ export default class mShare{
                     addContent = addContent.replace('$:image', customImage ? customImage : this.options.image);
                     addContent = addContent.replace('$:description', customDescription ? customDescription : this.options.description);
                     addContent = addContent.replace('$:url', customURL ? customURL : this.options.url);
-
-
                     template+=`<div class="mshare-native mshare-native--${network.className}">${addContent}</div>`;
                 }
             }
