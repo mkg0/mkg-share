@@ -1,4 +1,4 @@
-$networks: (
+ $networks: (
   email:#4A586F,
   facebook:#3B5998,
   googleplus:#E34429,
@@ -18,33 +18,15 @@ $networks: (
   }
   &-item{height: 40px;padding: 0 12px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;text-indent:5px;font-size: 1rem;user-select:none;touch-action:manipulation;
     &:before{content:'';width:25px;height:100%;display: block;float:left;line-height: 40px;vertical-align: middle;}
-    &--email{background-color: #{map-get($networks, 'email')};
-      &:before{background:url('img/email.svg') center / 75% no-repeat;}
-    }
-    &--facebook{background-color: #{map-get($networks, 'facebook')};
-      &:before{background:url('img/facebook.svg') center / 80% no-repeat;}
-    }
-    &--googleplus{background-color: #{map-get($networks, 'googleplus')};
-      &:before{background:url('img/googleplus.svg') center / 100% no-repeat;}
-    }
-    &--linkedin{background-color: #{map-get($networks, 'linkedin')};
-      &:before{background:url('img/linkedin.svg') center 44%/80% no-repeat;}
-    }
-    &--pinterest{background-color: #{map-get($networks, 'pinterest')};
-      &:before{background:url('img/pinterest.svg') center / 80% no-repeat;}
-    }
-    &--reddit{background-color: #{map-get($networks, 'reddit')};
-      &:before{background:url('img/reddit.svg') center / 100% no-repeat;}
-    }
-    &--twitter{background-color: #{map-get($networks, 'twitter')};
-      &:before{background:url('img/twitter.svg') center / 80% no-repeat;}
-    }
-    &--whatsapp{background-color: #{map-get($networks, 'whatsapp')};
-      &:before{background:url('img/whatsapp.svg') center 50%/100% no-repeat;}
-    }
-    &--sms{background-color: #{map-get($networks, 'sms')};
-      &:before{background:url('img/sms.svg') center 50%/90% no-repeat;}
-    }
+    &--email{background-color: #{map-get($networks, 'email')};}
+    &--facebook{background-color: #{map-get($networks, 'facebook')};}
+    &--googleplus{background-color: #{map-get($networks, 'googleplus')};}
+    &--linkedin{background-color: #{map-get($networks, 'linkedin')};}
+    &--pinterest{background-color: #{map-get($networks, 'pinterest')};}
+    &--reddit{background-color: #{map-get($networks, 'reddit')};}
+    &--twitter{background-color: #{map-get($networks, 'twitter')};}
+    &--whatsapp{background-color: #{map-get($networks, 'whatsapp')};}
+    &--sms{background-color: #{map-get($networks, 'sms')};}
   }
   &-native{display: inline-block;font-size:1rem;vertical-align: top;padding:4px 6px;min-width: 52px;
     &--email{}

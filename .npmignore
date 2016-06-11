@@ -1,0 +1,8 @@
+/node_modules
+/demo
+/img
+.eslintrc.json
+.babelrc
+.gitignore
+npm-debug.log
+Thumbs.db

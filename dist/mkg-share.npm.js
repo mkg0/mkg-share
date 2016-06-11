@@ -1,4 +1,4 @@
-var mShare = function(e) {
+module.exports = function(e) {
     function t(r) {
         if (i[r]) return i[r].exports;
         var n = i[r] = {
@@ -266,13 +266,13 @@ var mShare = function(e) {
                     }
                 }
                 t += "</div>", e.innerHTML += t, e.className += " mshare_container";
-                var h = e.querySelector(".mshare");
-                this.options.size && (h.className += " mshare--" + this.options.size), "pane" === this.options.mode && (e.className += " mshare--button", 
-                e.addEventListener("click", this.toggle.bind(this, e)), h.className += " mshare--close", 
-                "native" !== this.options.style && (h.style.left = -h.offsetWidth / 2 + e.offsetWidth / 2 + "px", 
-                h.getBoundingClientRect().left < 0 && (h.style.left = -1 * e.getBoundingClientRect().left + "px"), 
-                h.getBoundingClientRect().left > document.documentElement.clientWidth - h.offsetWidth && (h.style.left = document.documentElement.clientWidth - e.getBoundingClientRect().left - h.offsetWidth + "px")));
-                for (var u = e.querySelectorAll(".mshare-item--popup"), f = 0; f < u.length; f++) u[f].addEventListener("click", this._shareOpen.bind(u[f]));
+                var u = e.querySelector(".mshare");
+                this.options.size && (u.className += " mshare--" + this.options.size), "pane" === this.options.mode && (e.className += " mshare--button", 
+                e.addEventListener("click", this.toggle.bind(this, e)), u.className += " mshare--close", 
+                "native" !== this.options.style && (u.style.left = -u.offsetWidth / 2 + e.offsetWidth / 2 + "px", 
+                u.getBoundingClientRect().left < 0 && (u.style.left = -1 * e.getBoundingClientRect().left + "px"), 
+                u.getBoundingClientRect().left > document.documentElement.clientWidth - u.offsetWidth && (u.style.left = document.documentElement.clientWidth - e.getBoundingClientRect().left - u.offsetWidth + "px")));
+                for (var h = e.querySelectorAll(".mshare-item--popup"), f = 0; f < h.length; f++) h[f].addEventListener("click", this._shareOpen.bind(h[f]));
             }
         }, {
             key: "_shareOpen",
@@ -374,14 +374,14 @@ var mShare = function(e) {
 }, function(e, t, i) {
     function r(e, t) {
         for (var i = 0; i < e.length; i++) {
-            var r = e[i], n = h[r.id];
+            var r = e[i], n = u[r.id];
             if (n) {
                 n.refs++;
                 for (var o = 0; o < n.parts.length; o++) n.parts[o](r.parts[o]);
                 for (;o < r.parts.length; o++) n.parts.push(c(r.parts[o], t));
             } else {
                 for (var s = [], o = 0; o < r.parts.length; o++) s.push(c(r.parts[o], t));
-                h[r.id] = {
+                u[r.id] = {
                     id: r.id,
                     refs: 1,
                     parts: s
@@ -464,14 +464,14 @@ var mShare = function(e) {
         }), o = e.href;
         e.href = URL.createObjectURL(n), o && URL.revokeObjectURL(o);
     }
-    var h = {}, u = function(e) {
+    var u = {}, h = function(e) {
         var t;
         return function() {
             return "undefined" == typeof t && (t = e.apply(this, arguments)), t;
         };
-    }, f = u(function() {
+    }, f = h(function() {
         return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-    }), v = u(function() {
+    }), v = h(function() {
         return document.head || document.getElementsByTagName("head")[0];
     }), g = null, b = 0, y = [];
     e.exports = function(e, t) {
@@ -479,7 +479,7 @@ var mShare = function(e) {
         var i = n(e);
         return r(i, t), function(e) {
             for (var o = [], s = 0; s < i.length; s++) {
-                var a = i[s], l = h[a.id];
+                var a = i[s], l = u[a.id];
                 l.refs--, o.push(l);
             }
             if (e) {
@@ -490,7 +490,7 @@ var mShare = function(e) {
                 var l = o[s];
                 if (0 === l.refs) {
                     for (var p = 0; p < l.parts.length; p++) l.parts[p]();
-                    delete h[l.id];
+                    delete u[l.id];
                 }
             }
         };
@@ -502,4 +502,4 @@ var mShare = function(e) {
         };
     }();
 } ]);
-//# sourceMappingURL=mkg-share.js.map
+//# sourceMappingURL=mkg-share.npm.js.map

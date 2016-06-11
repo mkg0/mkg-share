@@ -1,5 +1,6 @@
-/*jshint esversion:6*/
-class mShare{
+import './mkg-share.scss';
+
+export default class mShare{
     constructor(selector, options){
         this.selector = selector;
         this.options = {
