@@ -40,6 +40,8 @@ new mShare('#demo3',{style:'pane',googleplus:false,reddit:false,pinterest:false}
 ```
 
 ## To do
+- make it modular
+- convert base64 to inline svg
 - add new mode 'sidebar'
 - add new style 'minimal'
 - add optional share counts
