@@ -58,7 +58,7 @@ or just require it
 mshare-item classed item has color property. So you can use it with `currentColor` at child nodes. Here there are some example:
 
 #### custom style sample 1
-![custom style1]()
+![custom style1](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/custom1.jpg)
 ```scss
 .mshare__container .mshare--expanded{
     .mshare-item{background: transparent; // Eaech custom social share button
@@ -72,7 +72,7 @@ mshare-item classed item has color property. So you can use it with `currentColo
 ```
 
 #### custom style sample 2
-![custom style2]()
+![custom style2](https://raw.githubusercontent.com/mkg0/mkg-share/master/demo/assets/custom2.jpg)
 ```scss
 .mshare__container .mshare--expanded{
     .mshare-item{background: transparent;border:1px solid currentColor;border-radius: 50%;padding:0;text-align: center;;width:40px;height:40px; // Eaech custom social share button
