@@ -10,39 +10,38 @@
   sms:#63908D
 );
 
-.mshare{font-size: 0;text-align: center;white-space: nowrap;overflow: hidden;
-
-
+.mshare{font-size: 0;white-space: nowrap;overflow: hidden;
   &--pane{
     position: absolute;top:-45px;left:50%;z-index: 1;
   }
-  &-item{height: 40px;padding: 0 10px;color: #fff;cursor: pointer;display: inline-block;line-height: 40px;text-decoration: none;user-select:none;touch-action:manipulation;
-    &-text{font-size:14px;color:#fff;vertical-align: middle;
+  &-item{padding: 0 10px;color: #fff;cursor: pointer;display: inline-block;line-height: 36px;text-decoration: none;user-select:none;touch-action:manipulation;
+    &:hover,&:visited{text-decoration: none;}
+    &-text{font-size:13px;color:#fff;vertical-align: middle;
       &:not(:empty){margin-left:10px;}
     }
     &-icon{height:1.4em;width:1.4em;font-size:15px;fill:#fff;vertical-align: middle;
       &:first-child:last-child{padding:0 5px;}
     }
 
-    &--email{background-color: #{map-get($networks, 'email')};color:#{map-get($networks, 'email')};}
-    &--facebook{background-color: #{map-get($networks, 'facebook')};color:#{map-get($networks, 'facebook')};
+    &--email,&--email:visited,&--email:hover{background-color: #{map-get($networks, 'email')};color:#{map-get($networks, 'email')};}
+    &--facebook,&--facebook:visited,&--facebook:hover{background-color: #{map-get($networks, 'facebook')};color:#{map-get($networks, 'facebook')};
     .mshare-item-icon{margin-top:-0.1em;}
   }
-    &--googleplus{background-color: #{map-get($networks, 'googleplus')};color:#{map-get($networks, 'googleplus')};
+    &--googleplus,&--googleplus:visited,&--googleplus:hover{background-color: #{map-get($networks, 'googleplus')};color:#{map-get($networks, 'googleplus')};
       .mshare-item-icon{width: 1.7em;height: 1.7em;}
     }
-    &--linkedin{background-color: #{map-get($networks, 'linkedin')};color:#{map-get($networks, 'linkedin')};
+    &--linkedin,&--linkedin:visited,&--linkedin:hover{background-color: #{map-get($networks, 'linkedin')};color:#{map-get($networks, 'linkedin')};
       .mshare-item-icon{margin-top:-0.25em;}
   }
-    &--pinterest{background-color: #{map-get($networks, 'pinterest')};color:#{map-get($networks, 'pinterest')};
+    &--pinterest,&--pinterest:visited,&--pinterest:hover{background-color: #{map-get($networks, 'pinterest')};color:#{map-get($networks, 'pinterest')};
     .mshare-item-icon{width: 1.25em;height: 1.25em;margin-top:0.2em;}
   }
-    &--reddit{background-color: #{map-get($networks, 'reddit')};color:#{map-get($networks, 'reddit')};
+    &--reddit,&--reddit:visited,&--reddit:hover{background-color: #{map-get($networks, 'reddit')};color:#{map-get($networks, 'reddit')};
     .mshare-item-icon{width: 1.7em;height: 1.7em;}
 }
-    &--twitter{background-color: #{map-get($networks, 'twitter')};color:#{map-get($networks, 'twitter')};}
-    &--whatsapp{background-color: #{map-get($networks, 'whatsapp')};color:#{map-get($networks, 'whatsapp')};}
-    &--sms{background-color: #{map-get($networks, 'sms')};color:#{map-get($networks, 'sms')};}
+    &--twitter,&--twitter:visited,&--twitter:hover{background-color: #{map-get($networks, 'twitter')};color:#{map-get($networks, 'twitter')};}
+    &--whatsapp,&--whatsapp:visited,&--whatsapp:hover{background-color: #{map-get($networks, 'whatsapp')};color:#{map-get($networks, 'whatsapp')};}
+    &--sms,&--sms:visited,&--sms:hover{background-color: #{map-get($networks, 'sms')};color:#{map-get($networks, 'sms')};}
   }
   &-native{display: inline-block;font-size:1rem;vertical-align: top;padding:4px 6px;min-width: 52px;
     &--email{}
@@ -57,8 +56,8 @@
 }
 
 
-  &_container{position: relative;}/*!owner element*/
-  &_metacontainer{}
+  &__container{position: relative;}/*!owner element*/
+  &__metacontainer{}
 
   &--open:not(.mshare--native){height:40px;visibility:visible;transform:translate3d(0,0,0);opacity:1;transition:transform 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 450ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms;}
   &--close:not(.mshare--native){height:0px;transform:translate3d(0,20px,0);opacity:0;transition:transform 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), opacity 350ms cubic-bezier(0.515, 0.570, 0.110, 0.980), height 0ms 350ms;pointer-events: none}
@@ -68,7 +67,7 @@
 
   &--button{cursor: pointer;user-select:none;touch-action:manipulation;}
   &--expanded{margin:1em;
-    .mshare-item{margin:0 5px;padding: 0 15px;}
+    .mshare-item{margin:0 5px;padding: 0 12px;}
   }
   &--small{height:30px;top:-35px;
     .mshare-item{height:30px;line-height: 30px;padding: 0 5px;
@@ -77,5 +76,10 @@
     }
     .mshare-item{}
     &.mshare--expanded .mshare-item{padding:0 14px;}
+  }
+
+
+  @media (max-width: 767px) {
+    &-item-text{display: none;}
   }
 }

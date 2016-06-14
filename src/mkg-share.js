@@ -226,10 +226,10 @@ export default class mShare{
       });
     }
     _addScript(scriptId, {scriptSrc, scriptContent, scriptAttr}){
-        let metaContainer= document.querySelector('.mshare_metacontainer');
+        let metaContainer= document.querySelector('.mshare__metacontainer');
         if (!metaContainer){
             let newCont = document.createElement('div');
-            newCont.className="mshare_metacontainer";
+            newCont.className="mshare__metacontainer";
             document.body.insertBefore(newCont,document.body.firstChild);
             metaContainer= newCont;
         }
@@ -286,7 +286,6 @@ export default class mShare{
                         datas += data + '=' + dataValue;
                     }
                     template+=`<a href="${network.url + datas}" class="mshare-item${network.openPopUp ?' mshare-item--popup':''} mshare-item--${network.className}">${svg[network.className]}${isTextDisplay ? '<span class="mshare-item-text">'+network.text+'</span>' : ''}</a>`;
-                    console.log(template);
                 }else if(network.native){
                     this._addScript(network.className, network.nativeProps);
                     let addContent = network.nativeProps.addContent;
@@ -305,7 +304,7 @@ export default class mShare{
         }
         template +='</div>';
         element.innerHTML +=template;
-        element.className += ' mshare_container';
+        element.className += ' mshare__container';
         let mshare = element.querySelector('.mshare');
         if (this.options.size)
             mshare.className += ' mshare--' + this.options.size;

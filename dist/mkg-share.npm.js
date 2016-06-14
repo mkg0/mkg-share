@@ -1,12 +1,12 @@
 module.exports = function(e) {
     function t(s) {
         if (i[s]) return i[s].exports;
-        var o = i[s] = {
+        var r = i[s] = {
             exports: {},
             id: s,
             loaded: !1
         };
-        return e[s].call(o.exports, o, o.exports, t), o.loaded = !0, o.exports;
+        return e[s].call(r.exports, r, r.exports, t), r.loaded = !0, r.exports;
     }
     var i = {};
     return t.m = e, t.c = i, t.p = "/", t(0);
@@ -17,13 +17,13 @@ module.exports = function(e) {
             "default": e
         };
     }
-    function o(e, t) {
+    function r(e, t) {
         if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
     }
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = function() {
+    var o = function() {
         function e(e, t) {
             for (var i = 0; i < t.length; i++) {
                 var s = t[i];
@@ -36,19 +36,19 @@ module.exports = function(e) {
         };
     }();
     i(1);
-    var n = i(5), a = s(n), c = i(6), l = s(c), p = i(7), m = s(p), h = i(8), d = s(h), u = i(9), f = s(u), v = i(10), g = s(v), b = i(11), w = s(b), y = i(12), x = s(y), k = i(13), C = s(k), z = {
-        email: a["default"],
+    var a = i(5), n = s(a), c = i(6), l = s(c), m = i(7), h = s(m), p = i(8), d = s(p), u = i(9), v = s(u), f = i(10), g = s(f), b = i(11), w = s(b), y = i(12), x = s(y), k = i(13), C = s(k), z = {
+        email: n["default"],
         facebook: l["default"],
-        googleplus: m["default"],
+        googleplus: h["default"],
         linkedin: d["default"],
-        pinterest: f["default"],
+        pinterest: v["default"],
         reddit: g["default"],
         sms: w["default"],
         twitter: x["default"],
         whatsapp: C["default"]
     }, S = function() {
         function e(t, i) {
-            o(this, e), this.selector = t, this.options = {
+            r(this, e), this.selector = t, this.options = {
                 mode: "expanded",
                 style: "basic",
                 text: null,
@@ -212,13 +212,13 @@ module.exports = function(e) {
             };
             for (var s in i) this.options[s] = i[s];
             if (this.options.setTexts) {
-                var r = this.options.setTexts;
-                for (var n in r) this._networks.hasOwnProperty(n) && (this._networks[n].text = r[n]);
+                var o = this.options.setTexts;
+                for (var a in o) this._networks.hasOwnProperty(a) && (this._networks[a].text = o[a]);
             }
             "native" === this.options.style && (this.options.size = "small");
-            for (var a = document.querySelectorAll(t), c = 0; c < a.length; c++) this._init(a[c]);
+            for (var n = document.querySelectorAll(t), c = 0; c < n.length; c++) this._init(n[c]);
         }
-        return r(e, [ {
+        return o(e, [ {
             key: "toRFC3986",
             value: function(e) {
                 var t = encodeURIComponent(e);
@@ -229,66 +229,65 @@ module.exports = function(e) {
         }, {
             key: "_addScript",
             value: function(e, t) {
-                var i = t.scriptSrc, s = t.scriptContent, o = t.scriptAttr, r = document.querySelector(".mshare_metacontainer");
-                if (!r) {
-                    var n = document.createElement("div");
-                    n.className = "mshare_metacontainer", document.body.insertBefore(n, document.body.firstChild), 
-                    r = n;
+                var i = t.scriptSrc, s = t.scriptContent, r = t.scriptAttr, o = document.querySelector(".mshare__metacontainer");
+                if (!o) {
+                    var a = document.createElement("div");
+                    a.className = "mshare__metacontainer", document.body.insertBefore(a, document.body.firstChild), 
+                    o = a;
                 }
-                if ((i || s) && !r.querySelector("script#" + e)) {
-                    var a = document.createElement("script");
-                    if (a.setAttribute("type", "text/javascript"), a.setAttribute("id", e), i && a.setAttribute("src", i), 
-                    s && (a.innerHTML = s), o) for (var c in o) a.setAttribute(c, o[c]);
-                    r.appendChild(a);
+                if ((i || s) && !o.querySelector("script#" + e)) {
+                    var n = document.createElement("script");
+                    if (n.setAttribute("type", "text/javascript"), n.setAttribute("id", e), i && n.setAttribute("src", i), 
+                    s && (n.innerHTML = s), r) for (var c in r) n.setAttribute(c, r[c]);
+                    o.appendChild(n);
                 }
             }
         }, {
             key: "_init",
             value: function(e) {
-                var t = '<div class="mshare mshare--' + this.options.mode + " " + ("native" === this.options.style ? "mshare--native" : "mshare-nonative") + '">', i = void 0, s = void 0, o = void 0, r = void 0;
+                var t = '<div class="mshare mshare--' + this.options.mode + " " + ("native" === this.options.style ? "mshare--native" : "mshare-nonative") + '">', i = void 0, s = void 0, r = void 0, o = void 0;
                 e.getAttribute("data-mshare-title") && (i = e.getAttribute("data-mshare-title")), 
-                e.getAttribute("data-mshare-description") && (o = e.getAttribute("data-mshare-description")), 
+                e.getAttribute("data-mshare-description") && (r = e.getAttribute("data-mshare-description")), 
                 e.getAttribute("data-mshare-image") && (s = e.getAttribute("data-mshare-image")), 
-                e.getAttribute("data-mshare-url") && (r = e.getAttribute("data-mshare-url"));
-                var n = this.options.text;
-                null === this.options.text && "expanded" === this.options.mode && (n = !0);
-                for (var a in this._networks) {
-                    var c = this._networks[a];
+                e.getAttribute("data-mshare-url") && (o = e.getAttribute("data-mshare-url"));
+                var a = this.options.text;
+                null === this.options.text && "expanded" === this.options.mode && (a = !0);
+                for (var n in this._networks) {
+                    var c = this._networks[n];
                     if ((this.isMobile || !this.isMobile && !c.mobileOnly) && this.options[c.className]) if ("native" !== this.options.style) {
                         var l = "";
-                        for (var p in c.datas) {
+                        for (var m in c.datas) {
                             l += "" === l ? "?" : "&";
-                            var m = c.datas[p];
-                            m = m.replace("$title", i ? this.toRFC3986(i) : this.toRFC3986(this.options.title)), 
-                            m = m.replace("$image", s ? this.toRFC3986(s) : this.toRFC3986(this.options.image)), 
-                            m = m.replace("$description", o ? this.toRFC3986(o) : this.toRFC3986(this.options.description)), 
-                            m = m.replace("$url", r ? this.toRFC3986(r) : this.toRFC3986(this.options.url)), 
-                            m = m.replace("$:title", i ? i : this.options.title), m = m.replace("$:image", s ? s : this.options.image), 
-                            m = m.replace("$:description", o ? o : this.options.description), m = m.replace("$:url", r ? r : this.options.url), 
-                            l += p + "=" + m;
+                            var h = c.datas[m];
+                            h = h.replace("$title", i ? this.toRFC3986(i) : this.toRFC3986(this.options.title)), 
+                            h = h.replace("$image", s ? this.toRFC3986(s) : this.toRFC3986(this.options.image)), 
+                            h = h.replace("$description", r ? this.toRFC3986(r) : this.toRFC3986(this.options.description)), 
+                            h = h.replace("$url", o ? this.toRFC3986(o) : this.toRFC3986(this.options.url)), 
+                            h = h.replace("$:title", i ? i : this.options.title), h = h.replace("$:image", s ? s : this.options.image), 
+                            h = h.replace("$:description", r ? r : this.options.description), h = h.replace("$:url", o ? o : this.options.url), 
+                            l += m + "=" + h;
                         }
-                        t += '<a href="' + (c.url + l) + '" class="mshare-item' + (c.openPopUp ? " mshare-item--popup" : "") + " mshare-item--" + c.className + '">' + z[c.className] + (n ? '<span class="mshare-item-text">' + c.text + "</span>" : "") + "</a>", 
-                        console.log(t);
+                        t += '<a href="' + (c.url + l) + '" class="mshare-item' + (c.openPopUp ? " mshare-item--popup" : "") + " mshare-item--" + c.className + '">' + z[c.className] + (a ? '<span class="mshare-item-text">' + c.text + "</span>" : "") + "</a>";
                     } else if (c["native"]) {
                         this._addScript(c.className, c.nativeProps);
-                        var h = c.nativeProps.addContent;
-                        h = h.replace("$title", i ? this.toRFC3986(i) : this.toRFC3986(this.options.title)), 
-                        h = h.replace("$image", s ? this.toRFC3986(s) : this.toRFC3986(this.options.image)), 
-                        h = h.replace("$description", o ? this.toRFC3986(o) : this.toRFC3986(this.options.description)), 
-                        h = h.replace("$url", r ? this.toRFC3986(r) : this.toRFC3986(this.options.url)), 
-                        h = h.replace("$:title", i ? i : this.options.title), h = h.replace("$:image", s ? s : this.options.image), 
-                        h = h.replace("$:description", o ? o : this.options.description), h = h.replace("$:url", r ? r : this.options.url), 
-                        t += '<div class="mshare-native mshare-native--' + c.className + '">' + h + "</div>";
+                        var p = c.nativeProps.addContent;
+                        p = p.replace("$title", i ? this.toRFC3986(i) : this.toRFC3986(this.options.title)), 
+                        p = p.replace("$image", s ? this.toRFC3986(s) : this.toRFC3986(this.options.image)), 
+                        p = p.replace("$description", r ? this.toRFC3986(r) : this.toRFC3986(this.options.description)), 
+                        p = p.replace("$url", o ? this.toRFC3986(o) : this.toRFC3986(this.options.url)), 
+                        p = p.replace("$:title", i ? i : this.options.title), p = p.replace("$:image", s ? s : this.options.image), 
+                        p = p.replace("$:description", r ? r : this.options.description), p = p.replace("$:url", o ? o : this.options.url), 
+                        t += '<div class="mshare-native mshare-native--' + c.className + '">' + p + "</div>";
                     }
                 }
-                t += "</div>", e.innerHTML += t, e.className += " mshare_container";
+                t += "</div>", e.innerHTML += t, e.className += " mshare__container";
                 var d = e.querySelector(".mshare");
                 this.options.size && (d.className += " mshare--" + this.options.size), "pane" === this.options.mode && (e.className += " mshare--button", 
                 e.addEventListener("click", this.toggle.bind(this, e)), d.className += " mshare--close", 
                 "native" !== this.options.style && (d.style.left = -d.offsetWidth / 2 + e.offsetWidth / 2 + "px", 
                 d.getBoundingClientRect().left < 0 && (d.style.left = -1 * e.getBoundingClientRect().left + "px"), 
                 d.getBoundingClientRect().left > document.documentElement.clientWidth - d.offsetWidth && (d.style.left = document.documentElement.clientWidth - e.getBoundingClientRect().left - d.offsetWidth + "px")));
-                for (var u = e.querySelectorAll(".mshare-item--popup"), f = 0; f < u.length; f++) u[f].addEventListener("click", this._shareOpen.bind(u[f]));
+                for (var u = e.querySelectorAll(".mshare-item--popup"), v = 0; v < u.length; v++) u[v].addEventListener("click", this._shareOpen.bind(u[v]));
             }
         }, {
             key: "_shareOpen",
@@ -309,8 +308,8 @@ module.exports = function(e) {
                     var s = t[i].querySelector(".mshare");
                     s.className = s.className.replace("mshare--close", "mshare--open");
                 } else {
-                    var o = e.querySelector(".mshare");
-                    o.className = o.className.replace("mshare--close", "mshare--open");
+                    var r = e.querySelector(".mshare");
+                    r.className = r.className.replace("mshare--close", "mshare--open");
                 }
             }
         }, {
@@ -321,8 +320,8 @@ module.exports = function(e) {
                     var s = t[i].querySelector(".mshare");
                     s.className = s.className.replace("mshare--open", "mshare--close");
                 } else {
-                    var o = e.querySelector(".mshare");
-                    o.className = o.className.replace("mshare--open", "mshare--close");
+                    var r = e.querySelector(".mshare");
+                    r.className = r.className.replace("mshare--open", "mshare--close");
                 }
             }
         }, {
@@ -333,8 +332,8 @@ module.exports = function(e) {
                     var s = t[i].querySelector(".mshare");
                     s.className.indexOf("mshare--open") > 0 ? this.close(t[i]) : this.open(t[i]);
                 } else {
-                    var o = e.querySelector(".mshare");
-                    o.className.indexOf("mshare--open") > 0 ? this.close(e) : this.open(e);
+                    var r = e.querySelector(".mshare");
+                    r.className.indexOf("mshare--open") > 0 ? this.close(e) : this.open(e);
                 }
             }
         }, {
@@ -364,7 +363,7 @@ module.exports = function(e) {
     i(4)(s, {});
     s.locals && (e.exports = s.locals);
 }, function(e, t, i) {
-    t = e.exports = i(3)(), t.push([ e.id, ".mshare{font-size:0;text-align:center;white-space:nowrap;overflow:hidden/*!owner element*/}.mshare--pane{position:absolute;top:-45px;left:50%;z-index:1}.mshare-item{height:40px;padding:0 10px;color:#fff;cursor:pointer;display:inline-block;line-height:40px;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare-item-text{font-size:14px;color:#fff;vertical-align:middle}.mshare-item-text:not(:empty){margin-left:10px}.mshare-item-icon{height:1.4em;width:1.4em;font-size:15px;fill:#fff;vertical-align:middle}.mshare-item-icon:first-child:last-child{padding:0 5px}.mshare-item--email{background-color:#4a586f;color:#4a586f}.mshare-item--facebook{background-color:#3b5998;color:#3b5998}.mshare-item--facebook .mshare-item-icon{margin-top:-.1em}.mshare-item--googleplus{background-color:#e34429;color:#e34429}.mshare-item--googleplus .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--linkedin{background-color:#027bb6;color:#027bb6}.mshare-item--linkedin .mshare-item-icon{margin-top:-.25em}.mshare-item--pinterest{background-color:#c5282f;color:#c5282f}.mshare-item--pinterest .mshare-item-icon{width:1.25em;height:1.25em;margin-top:.2em}.mshare-item--reddit{background-color:#a1caf2;color:#a1caf2}.mshare-item--reddit .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--twitter{background-color:#27aae1;color:#27aae1}.mshare-item--whatsapp{background-color:#25d366;color:#25d366}.mshare-item--sms{background-color:#63908d;color:#63908d}.mshare-native{display:inline-block;font-size:1rem;vertical-align:top;padding:4px 6px;min-width:52px}.mshare_container{position:relative}.mshare--open:not(.mshare--native){height:40px;visibility:visible;transform:translateZ(0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close:not(.mshare--native){height:0;transform:translate3d(0,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--open.mshare--native{height:40px;visibility:visible;transform:translate3d(-50%,0,0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close.mshare--native{height:0;transform:translate3d(-50%,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--button{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare--expanded{margin:1em}.mshare--expanded .mshare-item{margin:0 5px;padding:0 15px}.mshare--small{height:30px;top:-35px}.mshare--small .mshare-item{height:30px;line-height:30px;padding:0 5px}.mshare--small .mshare-item-text{font-size:11px}.mshare--small .mshare-item-icon{font-size:13px}.mshare--small.mshare--expanded .mshare-item{padding:0 14px}", "" ]);
+    t = e.exports = i(3)(), t.push([ e.id, ".mshare{font-size:0;white-space:nowrap;overflow:hidden/*!owner element*/}.mshare--pane{position:absolute;top:-45px;left:50%;z-index:1}.mshare-item{padding:0 10px;color:#fff;cursor:pointer;display:inline-block;line-height:36px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare-item,.mshare-item:hover,.mshare-item:visited{text-decoration:none}.mshare-item-text{font-size:13px;color:#fff;vertical-align:middle}.mshare-item-text:not(:empty){margin-left:10px}.mshare-item-icon{height:1.4em;width:1.4em;font-size:15px;fill:#fff;vertical-align:middle}.mshare-item-icon:first-child:last-child{padding:0 5px}.mshare-item--email,.mshare-item--email:hover,.mshare-item--email:visited{background-color:#4a586f;color:#4a586f}.mshare-item--facebook,.mshare-item--facebook:hover,.mshare-item--facebook:visited{background-color:#3b5998;color:#3b5998}.mshare-item--facebook .mshare-item-icon,.mshare-item--facebook:hover .mshare-item-icon,.mshare-item--facebook:visited .mshare-item-icon{margin-top:-.1em}.mshare-item--googleplus,.mshare-item--googleplus:hover,.mshare-item--googleplus:visited{background-color:#e34429;color:#e34429}.mshare-item--googleplus .mshare-item-icon,.mshare-item--googleplus:hover .mshare-item-icon,.mshare-item--googleplus:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--linkedin,.mshare-item--linkedin:hover,.mshare-item--linkedin:visited{background-color:#027bb6;color:#027bb6}.mshare-item--linkedin .mshare-item-icon,.mshare-item--linkedin:hover .mshare-item-icon,.mshare-item--linkedin:visited .mshare-item-icon{margin-top:-.25em}.mshare-item--pinterest,.mshare-item--pinterest:hover,.mshare-item--pinterest:visited{background-color:#c5282f;color:#c5282f}.mshare-item--pinterest .mshare-item-icon,.mshare-item--pinterest:hover .mshare-item-icon,.mshare-item--pinterest:visited .mshare-item-icon{width:1.25em;height:1.25em;margin-top:.2em}.mshare-item--reddit,.mshare-item--reddit:hover,.mshare-item--reddit:visited{background-color:#a1caf2;color:#a1caf2}.mshare-item--reddit .mshare-item-icon,.mshare-item--reddit:hover .mshare-item-icon,.mshare-item--reddit:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--twitter,.mshare-item--twitter:hover,.mshare-item--twitter:visited{background-color:#27aae1;color:#27aae1}.mshare-item--whatsapp,.mshare-item--whatsapp:hover,.mshare-item--whatsapp:visited{background-color:#25d366;color:#25d366}.mshare-item--sms,.mshare-item--sms:hover,.mshare-item--sms:visited{background-color:#63908d;color:#63908d}.mshare-native{display:inline-block;font-size:1rem;vertical-align:top;padding:4px 6px;min-width:52px}.mshare__container{position:relative}.mshare--open:not(.mshare--native){height:40px;visibility:visible;transform:translateZ(0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close:not(.mshare--native){height:0;transform:translate3d(0,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--open.mshare--native{height:40px;visibility:visible;transform:translate3d(-50%,0,0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close.mshare--native{height:0;transform:translate3d(-50%,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--button{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare--expanded{margin:1em}.mshare--expanded .mshare-item{margin:0 5px;padding:0 12px}.mshare--small{height:30px;top:-35px}.mshare--small .mshare-item{height:30px;line-height:30px;padding:0 5px}.mshare--small .mshare-item-text{font-size:11px}.mshare--small .mshare-item-icon{font-size:13px}.mshare--small.mshare--expanded .mshare-item{padding:0 14px}@media (max-width:767px){.mshare-item-text{display:none}}", "" ]);
 }, function(e, t) {
     e.exports = function() {
         var e = [];
@@ -376,136 +375,136 @@ module.exports = function(e) {
             return e.join("");
         }, e.i = function(t, i) {
             "string" == typeof t && (t = [ [ null, t, "" ] ]);
-            for (var s = {}, o = 0; o < this.length; o++) {
-                var r = this[o][0];
-                "number" == typeof r && (s[r] = !0);
+            for (var s = {}, r = 0; r < this.length; r++) {
+                var o = this[r][0];
+                "number" == typeof o && (s[o] = !0);
             }
-            for (o = 0; o < t.length; o++) {
-                var n = t[o];
-                "number" == typeof n[0] && s[n[0]] || (i && !n[2] ? n[2] = i : i && (n[2] = "(" + n[2] + ") and (" + i + ")"), 
-                e.push(n));
+            for (r = 0; r < t.length; r++) {
+                var a = t[r];
+                "number" == typeof a[0] && s[a[0]] || (i && !a[2] ? a[2] = i : i && (a[2] = "(" + a[2] + ") and (" + i + ")"), 
+                e.push(a));
             }
         }, e;
     };
 }, function(e, t, i) {
     function s(e, t) {
         for (var i = 0; i < e.length; i++) {
-            var s = e[i], o = d[s.id];
-            if (o) {
-                o.refs++;
-                for (var r = 0; r < o.parts.length; r++) o.parts[r](s.parts[r]);
-                for (;r < s.parts.length; r++) o.parts.push(l(s.parts[r], t));
+            var s = e[i], r = d[s.id];
+            if (r) {
+                r.refs++;
+                for (var o = 0; o < r.parts.length; o++) r.parts[o](s.parts[o]);
+                for (;o < s.parts.length; o++) r.parts.push(l(s.parts[o], t));
             } else {
-                for (var n = [], r = 0; r < s.parts.length; r++) n.push(l(s.parts[r], t));
+                for (var a = [], o = 0; o < s.parts.length; o++) a.push(l(s.parts[o], t));
                 d[s.id] = {
                     id: s.id,
                     refs: 1,
-                    parts: n
+                    parts: a
                 };
             }
         }
     }
-    function o(e) {
+    function r(e) {
         for (var t = [], i = {}, s = 0; s < e.length; s++) {
-            var o = e[s], r = o[0], n = o[1], a = o[2], c = o[3], l = {
-                css: n,
-                media: a,
+            var r = e[s], o = r[0], a = r[1], n = r[2], c = r[3], l = {
+                css: a,
+                media: n,
                 sourceMap: c
             };
-            i[r] ? i[r].parts.push(l) : t.push(i[r] = {
-                id: r,
+            i[o] ? i[o].parts.push(l) : t.push(i[o] = {
+                id: o,
                 parts: [ l ]
             });
         }
         return t;
     }
-    function r(e, t) {
-        var i = v(), s = w[w.length - 1];
+    function o(e, t) {
+        var i = f(), s = w[w.length - 1];
         if ("top" === e.insertAt) s ? s.nextSibling ? i.insertBefore(t, s.nextSibling) : i.appendChild(t) : i.insertBefore(t, i.firstChild), 
         w.push(t); else {
             if ("bottom" !== e.insertAt) throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
             i.appendChild(t);
         }
     }
-    function n(e) {
+    function a(e) {
         e.parentNode.removeChild(e);
         var t = w.indexOf(e);
         t >= 0 && w.splice(t, 1);
     }
-    function a(e) {
+    function n(e) {
         var t = document.createElement("style");
-        return t.type = "text/css", r(e, t), t;
+        return t.type = "text/css", o(e, t), t;
     }
     function c(e) {
         var t = document.createElement("link");
-        return t.rel = "stylesheet", r(e, t), t;
+        return t.rel = "stylesheet", o(e, t), t;
     }
     function l(e, t) {
-        var i, s, o;
+        var i, s, r;
         if (t.singleton) {
-            var r = b++;
-            i = g || (g = a(t)), s = p.bind(null, i, r, !1), o = p.bind(null, i, r, !0);
+            var o = b++;
+            i = g || (g = n(t)), s = m.bind(null, i, o, !1), r = m.bind(null, i, o, !0);
         } else e.sourceMap && "function" == typeof URL && "function" == typeof URL.createObjectURL && "function" == typeof URL.revokeObjectURL && "function" == typeof Blob && "function" == typeof btoa ? (i = c(t), 
-        s = h.bind(null, i), o = function() {
-            n(i), i.href && URL.revokeObjectURL(i.href);
-        }) : (i = a(t), s = m.bind(null, i), o = function() {
-            n(i);
+        s = p.bind(null, i), r = function() {
+            a(i), i.href && URL.revokeObjectURL(i.href);
+        }) : (i = n(t), s = h.bind(null, i), r = function() {
+            a(i);
         });
         return s(e), function(t) {
             if (t) {
                 if (t.css === e.css && t.media === e.media && t.sourceMap === e.sourceMap) return;
                 s(e = t);
-            } else o();
+            } else r();
         };
     }
-    function p(e, t, i, s) {
-        var o = i ? "" : s.css;
-        if (e.styleSheet) e.styleSheet.cssText = y(t, o); else {
-            var r = document.createTextNode(o), n = e.childNodes;
-            n[t] && e.removeChild(n[t]), n.length ? e.insertBefore(r, n[t]) : e.appendChild(r);
+    function m(e, t, i, s) {
+        var r = i ? "" : s.css;
+        if (e.styleSheet) e.styleSheet.cssText = y(t, r); else {
+            var o = document.createTextNode(r), a = e.childNodes;
+            a[t] && e.removeChild(a[t]), a.length ? e.insertBefore(o, a[t]) : e.appendChild(o);
         }
     }
-    function m(e, t) {
+    function h(e, t) {
         var i = t.css, s = t.media;
         if (s && e.setAttribute("media", s), e.styleSheet) e.styleSheet.cssText = i; else {
             for (;e.firstChild; ) e.removeChild(e.firstChild);
             e.appendChild(document.createTextNode(i));
         }
     }
-    function h(e, t) {
+    function p(e, t) {
         var i = t.css, s = t.sourceMap;
         s && (i += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(s)))) + " */");
-        var o = new Blob([ i ], {
+        var r = new Blob([ i ], {
             type: "text/css"
-        }), r = e.href;
-        e.href = URL.createObjectURL(o), r && URL.revokeObjectURL(r);
+        }), o = e.href;
+        e.href = URL.createObjectURL(r), o && URL.revokeObjectURL(o);
     }
     var d = {}, u = function(e) {
         var t;
         return function() {
             return "undefined" == typeof t && (t = e.apply(this, arguments)), t;
         };
-    }, f = u(function() {
+    }, v = u(function() {
         return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-    }), v = u(function() {
+    }), f = u(function() {
         return document.head || document.getElementsByTagName("head")[0];
     }), g = null, b = 0, w = [];
     e.exports = function(e, t) {
-        t = t || {}, "undefined" == typeof t.singleton && (t.singleton = f()), "undefined" == typeof t.insertAt && (t.insertAt = "bottom");
-        var i = o(e);
+        t = t || {}, "undefined" == typeof t.singleton && (t.singleton = v()), "undefined" == typeof t.insertAt && (t.insertAt = "bottom");
+        var i = r(e);
         return s(i, t), function(e) {
-            for (var r = [], n = 0; n < i.length; n++) {
-                var a = i[n], c = d[a.id];
-                c.refs--, r.push(c);
+            for (var o = [], a = 0; a < i.length; a++) {
+                var n = i[a], c = d[n.id];
+                c.refs--, o.push(c);
             }
             if (e) {
-                var l = o(e);
+                var l = r(e);
                 s(l, t);
             }
-            for (var n = 0; n < r.length; n++) {
-                var c = r[n];
+            for (var a = 0; a < o.length; a++) {
+                var c = o[a];
                 if (0 === c.refs) {
-                    for (var p = 0; p < c.parts.length; p++) c.parts[p]();
+                    for (var m = 0; m < c.parts.length; m++) c.parts[m]();
                     delete d[c.id];
                 }
             }
