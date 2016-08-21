@@ -7,7 +7,8 @@
   reddit:#a1caf2,
   twitter:#27aae1,
   whatsapp:#25D366,
-  sms:#63908D
+  sms:#63908D,
+  stumbleupon:#eb4823
 );
 
 .mshare{font-size: 0;white-space: nowrap;overflow: hidden;
@@ -36,8 +37,11 @@
     &--pinterest,&--pinterest:visited,&--pinterest:hover{background-color: #{map-get($networks, 'pinterest')};color:#{map-get($networks, 'pinterest')};
     .mshare-item-icon{width: 1.25em;height: 1.25em;margin-top:0.2em;}
   }
-    &--reddit,&--reddit:visited,&--reddit:hover{background-color: #{map-get($networks, 'reddit')};color:#{map-get($networks, 'reddit')};
-    .mshare-item-icon{width: 1.7em;height: 1.7em;}
+  &--reddit,&--reddit:visited,&--reddit:hover{background-color: #{map-get($networks, 'reddit')};color:#{map-get($networks, 'reddit')};
+  .mshare-item-icon{width: 1.7em;height: 1.7em;}
+}
+  &--stumbleupon,&--stumbleupon:visited,&--stumbleupon:hover{background-color: #{map-get($networks, 'stumbleupon')};color:#{map-get($networks, 'stumbleupon')};
+  .mshare-item-icon{width: 1.5em;height: 1.5em;}
 }
     &--twitter,&--twitter:visited,&--twitter:hover{background-color: #{map-get($networks, 'twitter')};color:#{map-get($networks, 'twitter')};}
     &--whatsapp,&--whatsapp:visited,&--whatsapp:hover{background-color: #{map-get($networks, 'whatsapp')};color:#{map-get($networks, 'whatsapp')};}
