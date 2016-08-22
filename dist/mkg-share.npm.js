@@ -36,7 +36,7 @@ module.exports = function(e) {
         };
     }();
     i(1);
-    var a = i(5), n = s(a), c = i(6), l = s(c), m = i(7), h = s(m), p = i(8), d = s(p), u = i(9), v = s(u), f = i(10), g = s(f), b = i(11), w = s(b), y = i(12), x = s(y), k = i(13), C = s(k), z = {
+    var a = i(5), n = s(a), c = i(6), l = s(c), m = i(7), h = s(m), p = i(8), d = s(p), u = i(9), v = s(u), f = i(10), g = s(f), b = i(11), w = s(b), y = i(12), x = s(y), k = i(13), C = s(k), z = i(14), S = s(z), N = {
         email: n["default"],
         facebook: l["default"],
         googleplus: h["default"],
@@ -45,8 +45,9 @@ module.exports = function(e) {
         reddit: g["default"],
         sms: w["default"],
         twitter: x["default"],
-        whatsapp: C["default"]
-    }, S = function() {
+        whatsapp: C["default"],
+        stumbleupon: S["default"]
+    }, j = function() {
         function e(t, i) {
             r(this, e), this.selector = t, this.options = {
                 mode: "expanded",
@@ -67,7 +68,8 @@ module.exports = function(e) {
                 twitter: !0,
                 email: !0,
                 whatsapp: !0,
-                sms: !0
+                sms: !0,
+                stumbleupon: !1
             }, this.isMobile = !1, (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) && (this.isMobile = !0), 
             this._networks = {
                 facebook: {
@@ -208,6 +210,22 @@ module.exports = function(e) {
                     },
                     "native": !1,
                     nativeProps: {}
+                },
+                stumbleupon: {
+                    url: "http://www.stumbleupon.com/submit",
+                    text: "SHARE",
+                    className: "stumbleupon",
+                    mobileOnly: !1,
+                    openPopUp: !0,
+                    datas: {
+                        url: "$url"
+                    },
+                    "native": !0,
+                    nativeProps: {
+                        scriptSrc: "",
+                        scriptContent: "(function() {var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true;li.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + '//platform.stumbleupon.com/1/widgets.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);})();",
+                        addContent: '<su:badge layout="2"></su:badge>'
+                    }
                 }
             };
             for (var s in i) this.options[s] = i[s];
@@ -267,7 +285,7 @@ module.exports = function(e) {
                             h = h.replace("$:description", r ? r : this.options.description), h = h.replace("$:url", o ? o : this.options.url), 
                             l += m + "=" + h;
                         }
-                        t += '<a href="' + (c.url + l) + '" class="mshare-item' + (c.openPopUp ? " mshare-item--popup" : "") + " mshare-item--" + c.className + '">' + z[c.className] + (a ? '<span class="mshare-item-text">' + c.text + "</span>" : "") + "</a>";
+                        t += '<a href="' + (c.url + l) + '" class="mshare-item' + (c.openPopUp ? " mshare-item--popup" : "") + " mshare-item--" + c.className + '">' + N[c.className] + (a ? '<span class="mshare-item-text">' + c.text + "</span>" : "") + "</a>";
                     } else if (c["native"]) {
                         this._addScript(c.className, c.nativeProps);
                         var p = c.nativeProps.addContent;
@@ -294,8 +312,8 @@ module.exports = function(e) {
             value: function(e) {
                 e.preventDefault();
                 var t = {
-                    width: 500,
-                    height: 350
+                    width: 600,
+                    height: 450
                 };
                 t.top = screen.height / 2 - t.height / 2, t.left = screen.width / 2 - t.width / 2, 
                 window.open(this.href, "targetWindow", "\n            toolbar=no,\n            location=no,\n            status=no,\n            menubar=no,\n            scrollbars=yes,\n            resizable=yes,\n            left=" + t.left + ",\n            top=" + t.top + ",\n            width=" + t.width + ",\n            height=" + t.height + "\n          ");
@@ -356,14 +374,14 @@ module.exports = function(e) {
             }
         } ]), e;
     }();
-    t["default"] = S, e.exports = t["default"];
+    t["default"] = j, e.exports = t["default"];
 }, function(e, t, i) {
     var s = i(2);
     "string" == typeof s && (s = [ [ e.id, s, "" ] ]);
     i(4)(s, {});
     s.locals && (e.exports = s.locals);
 }, function(e, t, i) {
-    t = e.exports = i(3)(), t.push([ e.id, ".mshare{font-size:0;white-space:nowrap;overflow:hidden/*!owner element*/}.mshare--pane{position:absolute;top:-45px;left:50%;z-index:1}.mshare-item{padding:0 10px;color:#fff;cursor:pointer;display:inline-block;line-height:36px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare-item,.mshare-item:hover,.mshare-item:visited{text-decoration:none}.mshare-item-text{font-size:13px;color:#fff;vertical-align:middle}.mshare-item-text:not(:empty){margin-left:10px}.mshare-item-icon{height:1.4em;width:1.4em;font-size:15px;fill:#fff;vertical-align:middle}.mshare-item-icon:first-child:last-child{padding:0 5px}.mshare-item--email,.mshare-item--email:hover,.mshare-item--email:visited{background-color:#4a586f;color:#4a586f}.mshare-item--facebook,.mshare-item--facebook:hover,.mshare-item--facebook:visited{background-color:#3b5998;color:#3b5998}.mshare-item--facebook .mshare-item-icon,.mshare-item--facebook:hover .mshare-item-icon,.mshare-item--facebook:visited .mshare-item-icon{margin-top:-.1em}.mshare-item--googleplus,.mshare-item--googleplus:hover,.mshare-item--googleplus:visited{background-color:#e34429;color:#e34429}.mshare-item--googleplus .mshare-item-icon,.mshare-item--googleplus:hover .mshare-item-icon,.mshare-item--googleplus:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--linkedin,.mshare-item--linkedin:hover,.mshare-item--linkedin:visited{background-color:#027bb6;color:#027bb6}.mshare-item--linkedin .mshare-item-icon,.mshare-item--linkedin:hover .mshare-item-icon,.mshare-item--linkedin:visited .mshare-item-icon{margin-top:-.25em}.mshare-item--pinterest,.mshare-item--pinterest:hover,.mshare-item--pinterest:visited{background-color:#c5282f;color:#c5282f}.mshare-item--pinterest .mshare-item-icon,.mshare-item--pinterest:hover .mshare-item-icon,.mshare-item--pinterest:visited .mshare-item-icon{width:1.25em;height:1.25em;margin-top:.2em}.mshare-item--reddit,.mshare-item--reddit:hover,.mshare-item--reddit:visited{background-color:#a1caf2;color:#a1caf2}.mshare-item--reddit .mshare-item-icon,.mshare-item--reddit:hover .mshare-item-icon,.mshare-item--reddit:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--twitter,.mshare-item--twitter:hover,.mshare-item--twitter:visited{background-color:#27aae1;color:#27aae1}.mshare-item--whatsapp,.mshare-item--whatsapp:hover,.mshare-item--whatsapp:visited{background-color:#25d366;color:#25d366}.mshare-item--sms,.mshare-item--sms:hover,.mshare-item--sms:visited{background-color:#63908d;color:#63908d}.mshare-native{display:inline-block;font-size:1rem;vertical-align:top;padding:4px 6px;min-width:52px}.mshare__container{position:relative}.mshare--open:not(.mshare--native){height:40px;visibility:visible;transform:translateZ(0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close:not(.mshare--native){height:0;transform:translate3d(0,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--open.mshare--native{height:40px;visibility:visible;transform:translate3d(-50%,0,0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close.mshare--native{height:0;transform:translate3d(-50%,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--button{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare--expanded{margin:1em}.mshare--expanded .mshare-item{margin:0 5px;padding:0 12px}.mshare--small{height:30px;top:-35px}.mshare--small .mshare-item{height:30px;line-height:30px;padding:0 5px}.mshare--small .mshare-item-text{font-size:11px}.mshare--small .mshare-item-icon{font-size:13px}.mshare--small.mshare--expanded .mshare-item{padding:0 14px}@media (max-width:767px){.mshare-item-text{display:none}}", "" ]);
+    t = e.exports = i(3)(), t.push([ e.id, ".mshare{font-size:0;white-space:nowrap;overflow:hidden/*!owner element*/}.mshare--pane{position:absolute;top:-45px;left:50%;z-index:1}.mshare-item{padding:0 10px;color:#fff;cursor:pointer;display:inline-block;line-height:36px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare-item,.mshare-item:hover,.mshare-item:visited{text-decoration:none}.mshare-item-text{font-size:13px;color:#fff;vertical-align:middle}.mshare-item-text:not(:empty){margin-left:10px}.mshare-item-icon{height:1.4em;width:1.4em;font-size:15px;fill:#fff;vertical-align:middle}.mshare-item-icon:first-child:last-child{padding:0 5px}.mshare-item--email,.mshare-item--email:hover,.mshare-item--email:visited{background-color:#4a586f;color:#4a586f}.mshare-item--facebook,.mshare-item--facebook:hover,.mshare-item--facebook:visited{background-color:#3b5998;color:#3b5998}.mshare-item--facebook .mshare-item-icon,.mshare-item--facebook:hover .mshare-item-icon,.mshare-item--facebook:visited .mshare-item-icon{margin-top:-.1em}.mshare-item--googleplus,.mshare-item--googleplus:hover,.mshare-item--googleplus:visited{background-color:#e34429;color:#e34429}.mshare-item--googleplus .mshare-item-icon,.mshare-item--googleplus:hover .mshare-item-icon,.mshare-item--googleplus:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--linkedin,.mshare-item--linkedin:hover,.mshare-item--linkedin:visited{background-color:#027bb6;color:#027bb6}.mshare-item--linkedin .mshare-item-icon,.mshare-item--linkedin:hover .mshare-item-icon,.mshare-item--linkedin:visited .mshare-item-icon{margin-top:-.25em}.mshare-item--pinterest,.mshare-item--pinterest:hover,.mshare-item--pinterest:visited{background-color:#c5282f;color:#c5282f}.mshare-item--pinterest .mshare-item-icon,.mshare-item--pinterest:hover .mshare-item-icon,.mshare-item--pinterest:visited .mshare-item-icon{width:1.25em;height:1.25em;margin-top:.2em}.mshare-item--reddit,.mshare-item--reddit:hover,.mshare-item--reddit:visited{background-color:#a1caf2;color:#a1caf2}.mshare-item--reddit .mshare-item-icon,.mshare-item--reddit:hover .mshare-item-icon,.mshare-item--reddit:visited .mshare-item-icon{width:1.7em;height:1.7em}.mshare-item--stumbleupon,.mshare-item--stumbleupon:hover,.mshare-item--stumbleupon:visited{background-color:#eb4823;color:#eb4823}.mshare-item--stumbleupon .mshare-item-icon,.mshare-item--stumbleupon:hover .mshare-item-icon,.mshare-item--stumbleupon:visited .mshare-item-icon{width:1.5em;height:1.5em}.mshare-item--twitter,.mshare-item--twitter:hover,.mshare-item--twitter:visited{background-color:#27aae1;color:#27aae1}.mshare-item--whatsapp,.mshare-item--whatsapp:hover,.mshare-item--whatsapp:visited{background-color:#25d366;color:#25d366}.mshare-item--sms,.mshare-item--sms:hover,.mshare-item--sms:visited{background-color:#63908d;color:#63908d}.mshare-native{display:inline-block;font-size:1rem;vertical-align:top;padding:4px 6px;min-width:52px}.mshare__container{position:relative}.mshare--open:not(.mshare--native){height:40px;visibility:visible;transform:translateZ(0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close:not(.mshare--native){height:0;transform:translate3d(0,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--open.mshare--native{height:40px;visibility:visible;transform:translate3d(-50%,0,0);opacity:1;transition:transform .45s cubic-bezier(.515,.57,.11,.98),opacity .45s cubic-bezier(.515,.57,.11,.98),height 0ms}.mshare--close.mshare--native{height:0;transform:translate3d(-50%,20px,0);opacity:0;transition:transform .35s cubic-bezier(.515,.57,.11,.98),opacity .35s cubic-bezier(.515,.57,.11,.98),height 0ms .35s;pointer-events:none}.mshare--button{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-ms-touch-action:manipulation;touch-action:manipulation}.mshare--expanded{margin:1em}.mshare--expanded .mshare-item{margin:0 5px;padding:0 12px}.mshare--small{height:30px;top:-35px}.mshare--small .mshare-item{height:30px;line-height:30px;padding:0 5px}.mshare--small .mshare-item-text{font-size:11px}.mshare--small .mshare-item-icon{font-size:13px}.mshare--small.mshare--expanded .mshare-item{padding:0 14px}@media (max-width:767px){.mshare-item-text{display:none}}", "" ]);
 }, function(e, t) {
     e.exports = function() {
         var e = [];
@@ -534,5 +552,7 @@ module.exports = function(e) {
     e.exports = '<svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24" class=mshare-item-icon><g><path d="M23.4 5c-.6.9-1.4 1.7-2.3 2.4V8c0 1.3-.2 2.5-.5 3.7s-.9 2.4-1.7 3.6-1.6 2.2-2.7 3c-1 .9-2.3 1.6-3.7 2.1-1.5.5-3 .8-4.7.8-2.6 0-5-.7-7.2-2.1.3 0 .7.1 1.1.1 2.2 0 4.1-.7 5.8-2-1 0-1.9-.3-2.7-.9-.8-.6-1.3-1.4-1.6-2.3h.9c.4 0 .8-.1 1.2-.2-1.1-.2-2-.8-2.7-1.6-.7-.9-1.1-1.8-1.1-3v.1c.7.4 1.4.6 2.1.6-.6-.5-1.1-1-1.5-1.7-.3-.7-.5-1.4-.5-2.2 0-.8.2-1.6.6-2.4C3.4 5 4.8 6.2 6.4 7s3.5 1.3 5.4 1.4c-.1-.4-.1-.7-.1-1.1 0-1.3.5-2.4 1.4-3.3.9-.9 2-1.4 3.3-1.4 1.3 0 2.5.5 3.4 1.5 1-.2 2-.6 3-1.1-.4 1.1-1 2-2 2.6.8 0 1.7-.3 2.6-.6z"/></g></svg>';
 }, function(e, t) {
     e.exports = '<svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 418.9 420.9" class=mshare-item-icon><g><g><path d="M357.8 61.2C318.5 21.7 266.1 0 210.3 0 95.4 0 1.8 93.6 1.7 208.5c0 36.8 9.6 72.6 27.8 104.3L0 420.9l110.6-29c30.5 16.6 64.8 25.4 99.7 25.4h.1c114.9 0 208.5-93.6 208.6-208.6-.1-55.7-21.8-108.1-61.2-147.5zM210.3 382c-31.2 0-61.7-8.4-88.3-24.2l-6.3-3.8-65.6 17.2 17.5-64-4.1-6.6C46.1 273 37 241.1 37 208.4 37 113 114.8 35.2 210.4 35.2c46.3 0 89.8 18.1 122.6 50.8 32.7 32.8 50.7 76.3 50.7 122.6-.1 95.7-77.9 173.4-173.4 173.4zm95.1-129.8c-5.2-2.6-30.8-15.2-35.6-17-4.8-1.7-8.3-2.6-11.7 2.6-3.5 5.2-13.5 17-16.5 20.4-3 3.5-6.1 3.9-11.3 1.3-5.2-2.6-22-8.1-41.9-25.9-15.5-13.8-25.9-30.9-29-36.1-3-5.2-.3-8 2.3-10.6 2.3-2.3 5.2-6.1 7.8-9.1 2.6-3 3.5-5.2 5.2-8.7 1.7-3.5.9-6.5-.4-9.1-1.3-2.6-11.7-28.3-16.1-38.7-4.2-10.2-8.5-8.8-11.7-8.9-3-.2-6.5-.2-10-.2s-9.1 1.3-13.9 6.5c-4.8 5.2-18.2 17.8-18.2 43.5s18.7 50.4 21.3 53.9c2.6 3.5 36.7 56.1 89 78.7 12.4 5.4 22.1 8.6 29.7 11 12.5 4 23.8 3.4 32.8 2.1 10-1.5 30.8-12.6 35.2-24.8 4.3-12.2 4.3-22.6 3-24.8-1.3-2.2-4.8-3.5-10-6.1z"/></g></g></svg>';
+}, function(e, t) {
+    e.exports = '<svg xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24" class=mshare-item-icon><linearGradient gradientUnits=userSpaceOnUse x1=-388 y1=312 x2=-387.293 y2=311.293><stop offset=0 stop-color=#1da238 /><stop offset=.983 stop-color=#24391d /></linearGradient><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-.1 8.5c-.5 0-.9.4-.9.9v5.3c0 2-1.7 3.6-3.7 3.6s-3.7-1.7-3.7-3.7v-2.3h2.8v2.3c0 .5.4.9.9.9s.9-.4.9-.9V9.2c.1-2 1.7-3.6 3.7-3.6s3.6 1.6 3.7 3.6v1.2l-1.7.5-1.1-.5v-1c-.1-.5-.4-.9-.9-.9zm8.2 6.1c0 2-1.7 3.7-3.7 3.7s-3.7-1.6-3.7-3.7v-2.3l1.1.5 1.7-.5v2.3c0 .5.4.9.9.9s.9-.4.9-.9v-2.4h2.8v2.4z"/></svg>';
 } ]);
 //# sourceMappingURL=mkg-share.npm.js.map
